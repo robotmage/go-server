@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-const version = "0.3"
+const version = "0.4"
 
 func responseString() string {
 	hostName, _ := os.Hostname()
