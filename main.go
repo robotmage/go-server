@@ -9,9 +9,13 @@ import (
 
 const version = "0.1"
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func responseString() string {
 	hostName, _ := os.Hostname()
-	fmt.Fprintf(w, "Version %s Hi There from [%s], I love %s!\n",version, hostName, r.URL.Path[1:])
+	return fmt.Sprintf("Version %s Hi There from [%s]\n", version, hostName)
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, responseString())
 }
 
 func main() {
